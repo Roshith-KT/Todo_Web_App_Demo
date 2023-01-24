@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text>">
+                    <h1 style="text-shadow: 0 0 3px #FF0000; text-align:center;">UPDATE TASK</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2>Updating "{{task.name}}" task</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-success" type="submit">update</button>
+    <a href="/" class="btn btn-danger">Cancel</a>
+</form>
+{% endblock %}

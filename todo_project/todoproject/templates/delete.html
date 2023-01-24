@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text>">
+                    <h1 style="text-shadow: 0 0 3px #FF0000; text-align:center;">DELETE TASK</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<form method="post">
+  {% csrf_token %}
+  <P><b>Are you done with "{{task.name}}" task?</b></P>
+  <button class="btn btn-danger" type="submit">Yes</button>
+  <a href="/" class="btn btn-primary">Cancel</a>
+</form>
+{% endblock %}
